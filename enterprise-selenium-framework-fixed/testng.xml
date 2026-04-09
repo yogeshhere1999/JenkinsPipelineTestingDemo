@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Enterprise Suite" parallel="tests" thread-count="4">
+
+    <listeners>
+        <listener class-name="utils.ExtentTestListener"/>
+    </listeners>
+
+    <test name="AlphaUser - mSite">
+        <parameter name="platform" value="msite"/>
+        <classes>
+            <class name="tests.AlphaUserTest"/>
+        </classes>
+    </test>
+
+    <test name="AlphaUser - Desktop">
+        <parameter name="platform" value="desktop"/>
+        <classes>
+            <class name="tests.AlphaUserTest"/>
+        </classes>
+    </test>
+
+    <test name="Amenities - Desktop">
+        <parameter name="platform" value="desktop"/>
+        <classes>
+            <class name="tests.AmenitiesTest"/>
+        </classes>
+    </test>
+
+    <test name="FloorPlan - mSite">
+        <parameter name="platform" value="msite"/>
+        <classes>
+            <class name="tests.FloorPlanMsiteTest"/>
+        </classes>
+    </test>
+
+</suite>

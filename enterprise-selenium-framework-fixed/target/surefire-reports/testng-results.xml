@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-04-07T22:12:44 IST" name="Enterprise Suite" finished-at="2026-04-07T22:16:39 IST" duration-ms="235262">
+    <groups>
+    </groups>
+    <test started-at="2026-04-07T22:12:44 IST" name="AlphaUser - mSite" finished-at="2026-04-07T22:13:43 IST" duration-ms="59643">
+      <class name="tests.AlphaUserTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tests.AlphaUserTest@1e097d59]" started-at="2026-04-07T22:12:44 IST" name="setUp" finished-at="2026-04-07T22:13:03 IST" duration-ms="18765" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[msite]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="createAlphaUser()[pri:0, instance:tests.AlphaUserTest@1e097d59]" started-at="2026-04-07T22:13:03 IST" name="createAlphaUser" finished-at="2026-04-07T22:13:16 IST" duration-ms="13446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAlphaUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AlphaUserTest@1e097d59]" started-at="2026-04-07T22:13:16 IST" name="tearDown" finished-at="2026-04-07T22:13:43 IST" duration-ms="27125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.AlphaUserTest -->
+    </test> <!-- AlphaUser - mSite -->
+    <test started-at="2026-04-07T22:12:44 IST" name="AlphaUser - Desktop" finished-at="2026-04-07T22:13:41 IST" duration-ms="57435">
+      <class name="tests.AlphaUserTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tests.AlphaUserTest@bcef303]" started-at="2026-04-07T22:12:44 IST" name="setUp" finished-at="2026-04-07T22:13:07 IST" duration-ms="23532" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[desktop]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="createAlphaUser()[pri:0, instance:tests.AlphaUserTest@bcef303]" started-at="2026-04-07T22:13:07 IST" name="createAlphaUser" finished-at="2026-04-07T22:13:20 IST" duration-ms="12057" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAlphaUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AlphaUserTest@bcef303]" started-at="2026-04-07T22:13:20 IST" name="tearDown" finished-at="2026-04-07T22:13:41 IST" duration-ms="21545" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.AlphaUserTest -->
+    </test> <!-- AlphaUser - Desktop -->
+    <test started-at="2026-04-07T22:12:44 IST" name="Amenities - Desktop" finished-at="2026-04-07T22:14:59 IST" duration-ms="134924">
+      <class name="tests.AmenitiesTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tests.AmenitiesTest@a87f8ec]" started-at="2026-04-07T22:12:44 IST" name="setUp" finished-at="2026-04-07T22:13:07 IST" duration-ms="23133" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[desktop]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyAmenities()[pri:0, instance:tests.AmenitiesTest@a87f8ec]" started-at="2026-04-07T22:13:07 IST" name="verifyAmenities" finished-at="2026-04-07T22:13:43 IST" duration-ms="36335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAmenities -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AmenitiesTest@a87f8ec]" started-at="2026-04-07T22:13:43 IST" name="tearDown" finished-at="2026-04-07T22:13:51 IST" duration-ms="7822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tests.AmenitiesTest@a87f8ec]" started-at="2026-04-07T22:13:51 IST" name="setUp" finished-at="2026-04-07T22:14:04 IST" duration-ms="12489" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[desktop]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyAmenitiesFlow()[pri:0, instance:tests.AmenitiesTest@a87f8ec]" started-at="2026-04-07T22:14:04 IST" name="verifyAmenitiesFlow" finished-at="2026-04-07T22:14:56 IST" duration-ms="52646" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAmenitiesFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.AmenitiesTest@a87f8ec]" started-at="2026-04-07T22:14:56 IST" name="tearDown" finished-at="2026-04-07T22:14:59 IST" duration-ms="2206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.AmenitiesTest -->
+    </test> <!-- Amenities - Desktop -->
+    <test started-at="2026-04-07T22:12:44 IST" name="FloorPlan - mSite" finished-at="2026-04-07T22:16:39 IST" duration-ms="235260">
+      <class name="tests.FloorPlanMsiteTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:tests.FloorPlanMsiteTest@6e4566f1]" started-at="2026-04-07T22:12:44 IST" name="setUp" finished-at="2026-04-07T22:13:02 IST" duration-ms="18601" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[msite]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyFloorPlan_mSite()[pri:0, instance:tests.FloorPlanMsiteTest@6e4566f1]" started-at="2026-04-07T22:13:03 IST" name="verifyFloorPlan_mSite" finished-at="2026-04-07T22:16:38 IST" duration-ms="215515" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyFloorPlan_mSite -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FloorPlanMsiteTest@6e4566f1]" started-at="2026-04-07T22:16:38 IST" name="tearDown" finished-at="2026-04-07T22:16:39 IST" duration-ms="845" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.FloorPlanMsiteTest -->
+    </test> <!-- FloorPlan - mSite -->
+  </suite> <!-- Enterprise Suite -->
+</testng-results>

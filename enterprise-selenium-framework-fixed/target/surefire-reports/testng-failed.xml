@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="4" parallel="tests" name="Failed suite [Enterprise Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="utils.ExtentTestListener"/>
+  </listeners>
+  <test thread-count="4" parallel="tests" name="FloorPlan - mSite(failed)" verbose="0">
+    <parameter name="platform" value="msite"/>
+    <classes>
+      <class name="tests.FloorPlanMsiteTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyFloorPlan_mSite"/>
+        </methods>
+      </class> <!-- tests.FloorPlanMsiteTest -->
+    </classes>
+  </test> <!-- FloorPlan - mSite(failed) -->
+  <test thread-count="4" parallel="tests" name="Amenities - Desktop(failed)" verbose="0">
+    <parameter name="platform" value="desktop"/>
+    <classes>
+      <class name="tests.AmenitiesTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="verifyAmenitiesFlow"/>
+          <include name="verifyAmenities"/>
+        </methods>
+      </class> <!-- tests.AmenitiesTest -->
+    </classes>
+  </test> <!-- Amenities - Desktop(failed) -->
+</suite> <!-- Failed suite [Enterprise Suite] -->
