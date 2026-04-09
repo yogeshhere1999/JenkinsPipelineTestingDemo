@@ -30,4 +30,23 @@ pipeline {
         }
 
     }
+    stage('Parallel Tests') {
+    parallel {
+        stage('Chrome') {
+            steps {
+                bat 'mvn test -Dbrowser=chrome'
+            }
+        }
+        stage('Edge') {
+            steps {
+                bat 'mvn test -Dbrowser=edge'
+            }
+        }
+    }
+}
+    post {
+    always {
+        junit 'enterprise-selenium-framework-fixed/target/surefire-reports/*.xml'
+    }
+}
 }
