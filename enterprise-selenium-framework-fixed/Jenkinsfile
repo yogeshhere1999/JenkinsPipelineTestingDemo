@@ -5,11 +5,27 @@ pipeline {
         maven 'Maven3'
     }
 
+    environment {
+        PROJECT_DIR = 'enterprise-selenium-framework-fixed'
+    }
+
+    options {
+        timestamps()
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+    }
+
     stages {
+
+        stage('Checkout Code') {
+            steps {
+                echo 'Cloning repository...'
+                checkout scm
+            }
+        }
 
         stage('Build') {
             steps {
-                dir('enterprise-selenium-framework-fixed') {
+                dir("${PROJECT_DIR}") {
                     bat 'mvn clean install -DskipTests'
                 }
             }
@@ -17,36 +33,64 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('enterprise-selenium-framework-fixed') {
+                dir("${PROJECT_DIR}") {
                     bat 'mvn clean test'
                 }
             }
         }
 
-        stage('Deploy') {
-            steps {
-                bat 'echo Deploying application...'
+        stage('Parallel Cross Browser Test') {
+            parallel {
+                stage('Chrome Tests') {
+                    steps {
+                        dir("${PROJECT_DIR}") {
+                            bat 'mvn test -Dbrowser=chrome'
+                        }
+                    }
+                }
+                stage('Edge Tests') {
+                    steps {
+                        dir("${PROJECT_DIR}") {
+                            bat 'mvn test -Dbrowser=edge'
+                        }
+                    }
+                }
             }
         }
 
-    }
-    stage('Parallel Tests') {
-    parallel {
-        stage('Chrome') {
+        stage('Archive Reports') {
             steps {
-                bat 'mvn test -Dbrowser=chrome'
+                archiveArtifacts artifacts: "${PROJECT_DIR}/target/**/*.html", fingerprint: true
             }
         }
-        stage('Edge') {
+
+        stage('Deploy') {
             steps {
-                bat 'mvn test -Dbrowser=edge'
+                echo 'Deploying application...'
             }
         }
     }
-}
+
     post {
-    always {
-        junit 'enterprise-selenium-framework-fixed/target/surefire-reports/*.xml'
+
+        always {
+            echo 'Publishing test results...'
+
+            junit "${PROJECT_DIR}/target/surefire-reports/*.xml"
+
+            archiveArtifacts artifacts: "${PROJECT_DIR}/target/screenshots/*.png", allowEmptyArchive: true
+        }
+
+        success {
+            echo 'Build SUCCESSFUL 🎉'
+        }
+
+        unstable {
+            echo 'Build UNSTABLE - Some tests failed ⚠️'
+        }
+
+        failure {
+            echo 'Build FAILED ❌'
+        }
     }
-}
 }
