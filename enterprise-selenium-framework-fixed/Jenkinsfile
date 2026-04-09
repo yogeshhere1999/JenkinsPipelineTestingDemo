@@ -9,13 +9,17 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'mvn clean install -DskipTests'
+                dir('enterprise-selenium-framework-fixed') {
+                    bat 'mvn clean install -DskipTests'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                bat 'mvn clean test'
+                dir('enterprise-selenium-framework-fixed') {
+                    bat 'mvn clean test'
+                }
             }
         }
 
